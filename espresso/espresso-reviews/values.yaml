@@ -24,11 +24,11 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "rev"
 
-postgres-ha:
-  name: postgres
-  username: A1
+postgresha:
+  name: postgres1
+  username: "QTE="
   password: "QWoqMTIzNA=="
-  database: "AB1"
+  database: "QUIx"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -71,6 +71,10 @@ cm:
   value: v1
   value2: v2
 
+
+postgresql:
+  name: DATABASE_URL
+  value: "postgresql://A1:A*1234@postgres-postgresql-ha-postgresql:5432/AB1"
 
 ingress:
   enabled: false

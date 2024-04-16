@@ -7,6 +7,16 @@ replicaCount: 2
 hpa:
   name: espresso-hpa-pro
 
+postgresql:
+  name: DATABASE_URL
+  value: "postgresql://A1:A*1234@postgres-postgresql-ha-postgresql:5432/AB1"
+
+##need to work on this
+redis:
+  name: DATABASE_URL
+  value: "redis://A1:A*1234@postgres-postgresql-ha-postgresql:5432/AB1"
+
+
 image:
   repository: adjei12/product
   pullPolicy: Always
@@ -14,11 +24,11 @@ image:
   tag: "latest"
   
 
-postgres-ha:
-  name: "postgres" 
-  username: A1
+postgresha:
+  name: postgres 
+  username: "QTE="
   password: "QWoqMTIzNA=="
-  database: "AB1"
+  database: "QUIx"
 
 
 

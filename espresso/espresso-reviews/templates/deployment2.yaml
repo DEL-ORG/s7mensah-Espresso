@@ -32,12 +32,16 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          envFrom:
-          - secretRef:
-               name: {{ .Values.postgres-ha.name }}
           env:
-          - name: {{ .Values.cm.name }}
-            value: {{ .Values.cm.value2 }}
+            - name: {{ .Values.postgresql.name }}
+              value: {{ .Values.postgresql.value }}
+
+          #envFrom:
+          #- secretRef:
+          #     name: {{ .Values.postgresha.name }}
+          #env:
+          #- name: {{ .Values.cm.name }}
+          #  value: {{ .Values.cm.value2 }}
 
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
